@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <style>
+      button {
+        display: inline-block;
+        text-align: center;
+        font-size: 12px;
+        width: 30px;
+      }
+      div.result {
+        background-color: aliceblue;
+        width: 122px;
+        height: 20px;
+        text-align: right;
+        border: 2px solid black;
+        margin-bottom: 10px;
+      }
+      .process{
+        display: grid;
+        grid-template-columns: 30px 30px 30px 30px;
+        gap: 2px;
+
+      }
+    </style>
+  </header>
+  <body>
+    <div class="result"></div>
+
+    <div class="process">
+      <button onclick="
+        updateCalculation('1');
+        "> 1 </button>
+
+      <button onclick="
+        updateCalculation('2');
+      "> 2 </button>
+
+      <button onclick="
+        updateCalculation('3');
+      "> 3 </button>
+
+      <button onclick="
+        updateCalculation('+');
+      "> + </button>
+
+
+      <button onclick="
+        updateCalculation('4');
+      "> 4 </button>
+
+      <button onclick="
+        updateCalculation('5');
+      "> 5 </button>
+
+      <button onclick="
+        updateCalculation('6');
+      "> 6 </button>
+
+      <button onclick="
+        updateCalculation('-');
+      "> - </button>
+  
+
+      <button onclick="
+        updateCalculation('7');
+      "> 7 </button>
+
+      <button onclick="
+        updateCalculation('8');
+      "> 8 </button>
+
+      <button onclick="
+        updateCalculation('9');
+      "> 9 </button>
+
+      <button onclick="
+        updateCalculation('*');
+      "> * </button>
+  
+
+      <button onclick="
+        updateCalculation('0');
+      "> 0 </button>
+
+      <button onclick="
+        updateCalculation('.');
+        "> . </button>
+
+      <button onclick="
+        updateCalculation('=');
+      "> = </button>
+
+      <button onclick="
+        updateCalculation('/');
+      "> / </button>
+    </div>
+
+    <script>
+      let calculation = '';
+
+      function updateCalculation(value) {
+
+        if (value === '=') {
+          calculation = eval(calculation);
+          displayResult(calculation);
+          calculation = '';
+        } else {
+          calculation += value;
+          displayResult(calculation);
+        }
+       
+      }
+
+      function displayResult(result){
+        document.querySelector('.result')
+        .innerHTML = `${result}`;
+      }
+
+    </script>
+  </body>
+
+</html>
